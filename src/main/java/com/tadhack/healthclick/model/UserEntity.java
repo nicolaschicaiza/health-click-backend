@@ -13,7 +13,7 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user1")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -28,10 +28,10 @@ public class UserEntity {
     @Column(length = 50)
     private String email;
 
-    @Column(nullable = false, columnDefinition = "TINYINT")
+    @Column(nullable = false, columnDefinition = "INT")
     private Boolean locked;
 
-    @Column(nullable = false, columnDefinition = "TINYINT")
+    @Column(nullable = false, columnDefinition = "INT")
     private Boolean disabled;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
