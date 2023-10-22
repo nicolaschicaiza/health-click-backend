@@ -1,5 +1,6 @@
 package com.tadhack.healthclick.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,5 +28,6 @@ public class AlergiaEntity {
 
     @ManyToOne
     @JoinColumn(name="paciente_cedula")
+    @JsonBackReference
     private PacienteEntity paciente_cedula;
 }

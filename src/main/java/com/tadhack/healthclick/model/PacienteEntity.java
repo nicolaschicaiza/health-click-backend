@@ -1,5 +1,7 @@
 package com.tadhack.healthclick.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,9 +35,11 @@ public class PacienteEntity {
     private String sexo;
 
     @OneToMany(mappedBy="paciente_cedula")
-    private List<AlergiaEntity> alegias;
+    @JsonManagedReference
+    private List<AlergiaEntity> alergias;
 
     @OneToMany(mappedBy="paciente_cedula")
+    @JsonManagedReference
     private List<EnfermedadEntity> enfermedades;
 
 }
