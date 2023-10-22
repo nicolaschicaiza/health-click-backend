@@ -37,6 +37,9 @@ public class AuthController {
         Token token = new Token();
         token.setAccess_token(jwt);
         token.setUsername(loginDto.getUsername());
+        token.setCedula("123456");
+        token.setNombre("RICHARD SANCHEZ CAICEDO");
+        token.setCiudad("POPAYAN COLOMBIA");
         return ResponseEntity.ok(token);
         //return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).build();
     }

@@ -7,5 +7,7 @@ import lombok.Data;
 public class Token {
     private String access_token;
     private String username;
-    private String email;
+    private String cedula;
+    private String nombre;
+    private String ciudad;
 }
